@@ -1,198 +1,100 @@
-/* Define a aparência geral da página */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-align: center;
+/* Reseta estilos padrões */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* Estiliza o cabeçalho */
-h1 {
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-  margin: 0 0 20px;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
 }
 
-/* Estiliza o menu de navegação */
-#menu {
-  margin-bottom: 20px;
+.container {
+  width: 80%;
+  max-width: 800px;
 }
 
-/* Estiliza os botões do menu */
-#menu button {
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 5px;
-  cursor: pointer;
-  border-radius: 12px;
-}
-/*botões mudam de cor ao passar o mouse*/
-button:hover {
-  background-color: #8a8a8a;
-}
-
-/* Estiliza os campos de entrada de texto */
-input[type="text"],
-input[type="file"] {
-  width: 100%; /* Ajusta a largura para 100% do container */
-  max-width: 250px; /* Define uma largura máxima */
-  margin: 5px 0; /*define uma largura máxima */
-  border-radius: 8px;
-  height: 30px;
-}
-/* Estiliza o campo da data*/
-input[type="date"] {
-  width: 150px;
-  height: 30px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-/* Estiliza o botão de submissão */
-button {
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 10px 0;
-  cursor: pointer;
-  border-radius: 12px;
-}
-
-/* Estiliza as listas */
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-/* Estiliza os itens da lista */
-ul#task-list li,
-ul#apagar-list li {
-  border: 2px solid #ddd;
-  background-color: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  text-align: left;
+.header {
   display: flex;
   align-items: center;
-}
-
-ul#task-list li div,
-ul#apagar-list li div {
-  flex-grow: 1;
-  margin-right: 20px;
-}
-
-/* Estiliza os botões dentro dos itens da lista */
-ul#task-list li button,
-ul#apagar-list li button {
-  margin-left: 10px;
-}
-
-/* Estiliza os containers de formulário */
-.form-container {
-  display: none;
   margin-bottom: 20px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Centraliza o conteúdo dentro dos containers */
-.form-container,
-#list-container,
-#consulta-result {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 600px; /* Ajusta a largura máxima para melhor visualização em desktop */
-  text-align: center;
-}
-
-#form-cadastrar {
-  align-items: center; /* Centraliza os inputs */
-}
-
-/*Form Apagar. Alinhar texto*/
-body #form-apagar #apagar-list li label {
-  align-items: start;
-  text-align: le;
-}
-
-/* Filtro de status e a barra de pesquisa */
-#filter-status {
-  width: 90px;
-  padding: 1px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 13px;
-  background-color: #fff;
-  margin-bottom: 20px;
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
   margin-right: 10px;
-  cursor: pointer;
-  transition: border-color 0.3s ease-in-out;
-  align-items: left;
 }
 
-#search-task {
-  width: 150px;
-  padding: 2px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 13px;
-  background-color: #fff;
-  margin-bottom: 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  transition: border-color 0.3s ease-in-out;
-}
-
-/* Lupa */
-.icone.lupa {
-  width: 10px;
-  height: 10px;
-  border: 2px solid black;
+.add-button {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
   border-radius: 50%;
-  position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  margin-right: 10px;
 }
 
-.icone.lupa:after {
-  position: absolute;
+.add-button::after {
+  content: "+";
+  font-size: 20px;
+  color: #fff;
+}
+
+.table {
   width: 100%;
-  height: 2px;
-  background-color: black;
-  display: block;
-  content: "";
-  top: 50%;
-  left: 50%;
-  transform: rotate(45deg);
-  transform-origin: -1px 7px;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-/* Oculta a barra de pesquisa inicialmente */
-.hidden {
-  display: none;
+.table th, .table td {
+  padding: 15px;
+  text-align: left;
 }
 
-/* Exibe a barra de pesquisa quando a classe hidden for removida */
-.show {
-  display: inline-block;
+.table th {
+  font-weight: bold;
+  color: #333;
 }
 
-/* Responsividade da barra de pesquisa */
-@media (max-width: 600px) {
-  #filter-status,
-  #search-task {
-    width: 100%;
-    font-size: 14px;
-  }
+.table td {
+  border-top: 1px solid #eee;
 }
+
+.icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Substitua as URLs de imagem conforme necessário */
+.edit-icon {
+  background: url('edit-icon.png') no-repeat center center / contain;
+}
+
+.check-icon {
+  background: url('check-icon.png') no-repeat center center / contain;
+}
+
+.delete-icon {
+  background: url('delete-icon.png') no-repeat center center / contain;
+}
+
+
+

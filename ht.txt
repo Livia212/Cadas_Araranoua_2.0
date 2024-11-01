@@ -1,0 +1,64 @@
+<body>
+    <h1>Sistema de Cadastro de Tarefas</h1>
+    <div id="menu">
+        <button id="btn-cadastrar">Cadastrar Tarefa</button>
+        <button id="btn-listar">Listar Tarefas</button>
+        <button id="btn-apagar">Apagar Tarefa(s)</button>
+    </div>
+
+    <div id="form-cadastrar" class="form-container">
+        <h2>Cadastrar Tarefa</h2>
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" required maxlength="50" placeholder="Nome da tarefa">
+        <br><br>
+
+        <label for="data">Prazo:</label>
+        <input type="date" id="data" required min="">
+        <br><br>
+        <button id="btn-submit-cadastrar">Cadastrar</button>
+    </div>
+
+    <div id="list-container" class="form-container">
+        <h2>Lista de Tarefas</h2>
+        <!-- Conteiner para o filtro e o icone da lupa para poder mexer no alinhamento deles-->
+        <div class="filter-container">
+            <!-- Filtro -->
+            <label for="filter-status">filtro:</label>
+            <select id="filter-status">
+                <option value="todos">Todos</option>
+                <option value="pendente">Pendentes</option>
+                <option value="concluído">Concluídas</option>
+            </select>
+        
+        <!-- Botao da lupa -->
+        <div id="btn-search" class="icone lupa"></div>
+        
+
+    <!-- Barra de pesquisa oculta inicialmente -->
+    <input type="text" id="search-task" placeholder="Digite o titulo da tarefa" class="hidden">
+
+        <ul id="task-list"></ul>
+        </div>
+    </div>
+
+    <div id="form-editar" class="form-container">
+        <h2>Editar Tarefa</h2>
+        <label for="titulo-editar">Titulo:</label>
+        <br>
+        <input type="text" id="titulo-editar" required maxlength="50" placeholder="Nome da tarefa"><br>
+        <br>
+        <label for="data-editar">Data de conclusão:</label>
+        <input type="date" id="data-editar"><br>
+        <br><br>
+        <button id="btn-submit-editar">Atualizar</button>
+    </div>
+
+    <div id="form-apagar" class="form-container">
+        <h2>Apagar Tarefa(s)</h2>
+        <ul id="apagar-list"></ul>
+        <label><input type="checkbox" id="select-all"> Marcar/Desmarcar Todos</label><br>
+        <button id="btn-submit-apagar">Apagar Selecionados</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
