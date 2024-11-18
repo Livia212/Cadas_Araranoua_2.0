@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividadess</title>
+    <title>Atividades</title>
     <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
-
 <body>
     <div class="container">
         <div class="header">
             <h1>Atividades</h1>
-            <div class="add-button"></div>
+            <div class="add-button" id="show-form-button"></div>
         </div>
 
-        <div id="add-button" class="form-container">
-            <label for="titulo">Titulo:</label>
+        <div id="form-container" class="form-container" style="display: none;">
+            <label for="titulo">Título:</label>
             <input type="text" id="titulo" required maxlength="50" placeholder="Nome da tarefa">
             <br><br>
             <label for="data">Prazo:</label>
-            <input type="date" id="data" required min="">
+            <input type="date" id="data" required>
             <br><br>
             <button id="btn-submit-cadastrar">Cadastrar</button>
         </div>
@@ -28,9 +26,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Todas as Atividades</th>
                     <th>Data</th>
-                    
                 </tr>
             </thead>
             <tbody>
@@ -42,9 +38,16 @@
                         <div class="icon check-icon"></div>
                         <div class="icon delete-icon"></div>
                     </td>
-                
+                </tr>
             </tbody>
         </table>
+        <div id="tasks-list"> 
+            <h2>Todas as Atividades</h2> 
+            <ul id="task-list"> 
+                <!-- Tarefas serão adicionadas aqui --> 
+            </ul>
+        </div>    
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
